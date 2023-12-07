@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+ <meta charset="UTF-8" />
+ <title>Varijable</title>
+</head>
+<body>
+ <script type="text/javascript">
+	prviObjekt = {
+    firstName:"Marko", 
+    lastName:  "Maric",
+    age: 40,
+    eyeColor: "black"
+}
+
+drugiObjekt = {
+    firstName:"Pero", 
+    lastName:  "Peric",
+    age: 30,
+    eyeColor: "green"
+}
+
+treciObjekt = {
+    firstName: "Ivan",
+    lastName: "Ivic",
+    age: 22,
+    eyeColor: "blue"
+}
+
+	const niz = [prviObjekt,drugiObjekt,treciObjekt]; 
+	for (var i = 0; i < niz.length; i++) {
+    var objekt = niz[i]; 
+    document.write("<p>" + objekt.firstName + "</p>");
+    document.write("<p>" + objekt.lastName + "</p>");
+    document.write("<p>" + objekt.age + "</p>");
+    document.write("<p>" + objekt.eyeColor + "</p>");
+}
+
+ </script>
+</body>
+</html>

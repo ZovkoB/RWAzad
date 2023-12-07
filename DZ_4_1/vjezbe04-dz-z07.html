@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+ <meta charset="UTF-8" />
+ <title>Varijable</title>
+</head>
+<body>
+ <script type="text/javascript">
+	let provjera = function(parametar) {
+    if (typeof parametar === 'number') {
+      return parametar * parametar;
+} else {
+      return "Greška";
+}
+ };
+
+  
+  let broj1 = provjera(5);
+  document.write("<p>Broj: " + broj1 + "</p>");
+
+  let broj2 = provjera("a");
+  document.write("<p>Nije broj: " + broj2 + "</p>");
+</script>  
+</body>
+</html>

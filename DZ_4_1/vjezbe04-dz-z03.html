@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+ <meta charset="UTF-8" />
+ <title>Varijable</title>
+</head>
+<body>
+ <script type="text/javascript">
+		function jeliProst(broj) {
+    if (broj < 2) return false;
+    for (let i = 2; i < broj; i++) {
+      if (broj % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  for (let i = 2; i <= 1000; i++) {
+    if (jeliProst(i)) {
+      console.log(i);
+      document.write(+i + "<br/>")
+    }
+  }
+
+ </script>
+</body>
+</html>
+
