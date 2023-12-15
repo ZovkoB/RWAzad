@@ -1,0 +1,19 @@
+Dopunite kod ispod na način na klikom na prvi paragraf dodajte nove paragrafe teksta ispod default-nog paragrafa. 
+<html>
+<head>
+<script language="javascript" type="text/javascript">
+	function dodajP() {
+	let noviP = document.createElement("p");
+	noviP.innerHTML = "Novi paragraf";
+	
+	let def = document.getElementById("default");
+	
+	def.parentNode.insertBefore(noviP,def.nextSibling);
+	}
+</script>
+</head>
+<body>
+<p><a href="#" onclicK="dodajP()">Kliknite ovdje da dodate novi paragraf tekst</a></p>
+<p id="thisLocation">Novi paragrafi teksta će se pojaviti ispod</p>
+<p id="default">Ovo je defaultn-ni prvi paragraf teksta</p>
+</body>

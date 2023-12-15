@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+       
+	</style>
+</head>
+<body>
+
+<script>
+    
+    function generirajSlucajnuBoju() {
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        document.body.style.backgroundColor = randomColor;
+
+        
+        document.getElementById('trenutnaBoja').innerText = '' + randomColor;
+    }
+</script>
+
+<button onclick="generirajSlucajnuBoju()" >Promijeni boju pozadine</button>
+
+<div id="trenutnaBoja"></div>
+
+</body>
+</html>

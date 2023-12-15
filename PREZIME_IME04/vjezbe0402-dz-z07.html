@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<script>
+    function izracunGodina() {
+	
+        var dan = document.getElementById('dan').value;
+        var mjesec = document.getElementById('mjesec').value;
+        var godinaRodjenja = document.getElementById('godina').value;
+
+        var datumRodjenja = new Date(godinaRodjenja, mjesec - 1, dan);
+
+        var trenutniDatum = new Date();
+
+        var godine = trenutniDatum.getFullYear() - datumRodjenja.getFullYear();
+
+        if (
+            trenutniDatum.getMonth() < datumRodjenja.getMonth() ||
+            (trenutniDatum.getMonth() === datumRodjenja.getMonth() && trenutniDatum.getDate() < datumRodjenja.getDate())
+        ) {
+            godine--;
+        }
+
+        alert('Imate ' + godine + ' godina.');
+    }
+</script>
+
+<form>
+    <label for="dan">Unesite dan (1-31): </label>
+    <input type="number" id="dan" name="dan" min="1" max="31" required><br><br>
+    <label for="mjesec">Unesite mjesec (1-12): </label>
+    <input type="number" id="mjesec" name="mjesec" min="1" max="12" required><br><br>
+    <label for="godina">Unesite godinu: </label>
+    <input type="number" id="godina" name="godina" required><br><br>
+    <button type="button" onclick="izracunGodina()">Izračunaj</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<script>
+    function aritmeticki(brojevi) {
+        const suma = brojevi.reduce((acc, num) => acc + num, 0);
+        return suma / brojevi.length;
+    }
+
+    function geometrijski(brojevi) {
+        const produkt = brojevi.reduce((acc, num) => acc * num, 1);
+        return Math.pow(produkt, 1 / brojevi.length);
+    }
+
+    function izracunaj() {
+        const inputString = prompt('Unesi prirodne brojeve s zarezima izmedju:');
+
+        const brojevi = inputString.split(',').map(Number);
+
+        const aritmetickaSredina = aritmeticki(brojevi);
+        const geometrijskaSredina = geometrijski(brojevi);
+
+        document.getElementById('result').innerHTML = `
+            <p>Aritmeticka sredina: ${aritmetickaSredina.toFixed(2)}</p>
+            <p>Geometrijska sredina: ${geometrijskaSredina.toFixed(2)}</p>
+        `;
+    }
+</script>
+
+<h2>Klikni za izracun brojeva</h2>
+<button onclick="izracunaj()">Izracunaj</button>
+
+<div id="result"></div>
+
+</body>
+</html>

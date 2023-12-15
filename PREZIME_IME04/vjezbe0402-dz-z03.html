@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<script>
+    function prikazOcjena() {
+        var ocjena = document.getElementById('ocjena').value;
+
+        ocjena = parseInt(ocjena);
+
+        if (ocjena >= 1 && ocjena <= 5) {
+		
+            var kojaJeOcjena;
+            switch (ocjena) {
+                case 1:
+                     kojaJeOcjena = 'Nedovoljan';
+                    break;
+                case 2:
+                     kojaJeOcjena = 'Dovoljan';
+                    break;
+                case 3:
+                     kojaJeOcjena = 'Dobar';
+                    break;
+                case 4:
+                     kojaJeOcjena = 'Vrlo dobar';
+                    break;
+                case 5:
+                     kojaJeOcjena = 'Odličan';
+                    break;
+            }
+
+            alert(+ ocjena + ' ' +  kojaJeOcjena);
+        } else {
+            alert('Unesite  ocjenu od 1 do 5.');
+        }
+    }
+</script>
+
+<form>
+    <label for="ocjena">Unesite ocjenu od 1 do 5: </label>
+    <input type="text" id="ocjena" name="ocjena" pattern="[1-5]" required>
+    <button type="button" onclick="prikazOcjena()">Klikni za prikaz ocjene</button>
+</form>
+
+</body>
+</html>

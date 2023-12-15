@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<script>
+    function provjeriRegOznaka() {
+        
+        var registarskaOznaka = document.getElementById('registarskaOznaka').value;
+
+        
+        var regex = /^[0-9A-ZČĆŠŽĐ]{3}-[A-ZČĆŠŽĐ]{1}-[0-9]{3}$/;
+
+       
+        if (regex.test(registarskaOznaka)) {
+            alert('Ispravan format registarske oznake.');
+            return true;
+        } else {
+            alert('Neispravan format registarske oznake.');
+            return false;
+        }
+    }
+</script>
+
+<form onsubmit="return provjeriRegOznaka()">
+    <label for="registarskaOznaka">Unesite registarsku oznaku npr: A12-A-345: </label>
+    <input type="text" id="registarskaOznaka" name="registarskaOznaka" required>
+    <button type="submit">Validacija</button>
+</form>
+
+</body>
+</html>
